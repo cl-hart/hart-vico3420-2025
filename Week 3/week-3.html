@@ -26,13 +26,29 @@
         let total = Number(num1) + Number(num2);
     </script> 
 
+    <script>
+        let today;
+
+        today = "Wednesday";
+
+        console.log("The current day is " + today +".");
+
+        today = "Thursday";
+
+        console.log("Now it is " + today +".");
+
+        today = "Friday";
+
+        console.log("It is a new day again, now " + today +".");
+    </script>
+
 </head>
 <body>
     <div id="story"></div>
 
     <script>
         document.getElementById("story").innerHTML = `
-        Today, my day is going ${day}. I woke up in ${city} and for breakfast I ate ${breakfast}. I worked on ${num1} assignments this morning. For lunch, I had ${lunch} and it was ${taste}. After lunch I ${walk} go outside for some fresh air. Then, I worked on ${num2} assignments for the rest of the day. In total, I worked on ${total} assignments today.
+        Today is ${today}, my day is going ${day}. I woke up in ${city} and for breakfast I ate ${breakfast}. I worked on ${num1} assignments this morning. For lunch, I had ${lunch} and it was ${taste}. After lunch I ${walk} go outside for some fresh air. Then, I worked on ${num2} assignments for the rest of the day. In total, I worked on ${total} assignments today.
         `;
     </script>
 </body>
