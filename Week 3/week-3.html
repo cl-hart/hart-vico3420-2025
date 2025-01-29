@@ -6,35 +6,34 @@
     <title>Document</title>
 
     <script>
-        document.write("<h1><strong>This is the Week 3 Assignment!</strong></h1>");
-        let name = prompt("How is your day going?");
-        alert("I'm glad your day is going " + name + "!");
+        document.write("<h1><strong>Let's make a journal entry together!</strong></h1>");
+
+        alert("Let's make a journal entry together!");
+
+        let day = prompt("How is your day going?");
+        alert("I'm glad your day is going " + day + "!");
+
+        let city = prompt("What city are you living in?");
+        let breakfast = prompt("What did you have for breakfast?");
+        alert("" + breakfast + " sounds like a good way to start the day!");
+        
+        let num1 = prompt("How many assignments have you worked on this morning?");
+        let lunch = prompt("What did you have for lunch?");
+        let taste = prompt("Was your lunch good or bad?");
+        let walk = prompt("Did you go for a walk today? (did/did not)");
+        
+        let num2 = prompt("How many assignments did you work on after lunch?");
+        let total = Number(num1) + Number(num2);
     </script> 
-    <script>
-        alert("Let's add two numbers together");
 
-        let num1 = Number(prompt("What is your first number?"));
-        let num2 = Number(prompt("What is your second number?"));
-
-        let total = num1 + num2;
-
-        alert("The numbers added together are: " + total);
-
-        let city = "Athens";
-
-        console.log("The current city is " + city + ".");
-
-        city = "Pittsburgh";
-
-        console.log("Now it is " + city + ".");
-
-        city = "Washington, D.C.";
-
-        console.log("It has changed again to: " + city);
-    </script>  
-    
 </head>
 <body>
-    
+    <div id="story"></div>
+
+    <script>
+        document.getElementById("story").innerHTML = `
+        Today, my day is going ${day}. I woke up in ${city} and for breakfast I ate ${breakfast}. I worked on ${num1} assignments this morning. For lunch, I had ${lunch} and it was ${taste}. After lunch I ${walk} go outside for some fresh air. Then, I worked on ${num2} assignments for the rest of the day. In total, I worked on ${total} assignments today.
+        `;
+    </script>
 </body>
 </html>
