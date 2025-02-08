@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        alert("I have a black cat named Shadow ᓚᘏᗢ");
+        alert("I have a torbie cat named Pip ₍^. .^₎⟆");
+        alert("I have a golden doodle named Willow ૮ - ﻌ • ა");
+        alert("I had a dog named Reese ૮−ﻌ−ა");
+    </script>
+
+    <script>
+        // Pet Guessing Game!
+
+        let correctNumber = 3;
+        let numberGuess = prompt("Guess how many pets I have:");
+
+        if (numberGuess == correctNumber) {
+	        alert("You guessed correctly!");
+        }
+        else if (numberGuess < correctNumber) {
+            alert("You guessed too low!");
+            numberGuess = prompt("Guess how many pets I have:");
+        }
+        else {
+            alert("You guessed too high!");
+            numberGuess = prompt("Guess how many pets I have:");
+        }
+        if (numberGuess == correctNumber) {
+            alert("You guessed correctly!");
+        }
+        else if (numberGuess < correctNumber) {
+            alert("You guessed too low!");
+            numberGuess = prompt("Guess how many pets I have:");
+        }
+        else {
+            alert("You guessed too high!");
+            numberGuess = prompt("Guess how many pets I have:");
+        }
+
+        if (numberGuess == correctNumber) {
+            alert("You guessed correctly!");
+        }
+        else if (numberGuess < correctNumber) {
+            alert("You guessed too low! You lose!");
+        }
+        else {
+            alert("That was incorrect! You lose!");
+        }
+    </script>   
+
+    <script>
+         let animalChosen = "Eddie";
+
+        switch (animalChosen) {
+	    case "pip":
+		    console.log("The chosen animal is Paige's cat.");
+		    break;
+	    case "shadow":
+		    console.log("The chosen animal is Carly's cat..");
+		    break;
+	    case "Eddie":
+		    console.log("The chosen animal is Geordan's cat.");
+		    break;
+	default:
+		console.log("The chosen animal is unknown.");
+}
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
