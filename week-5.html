@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="content"></div>
+
+    <script>
+        let names = [
+            ["Pip", "https://example.com/pip"],
+            ["Shadow", "https://example.com/shadow"],
+            ["Striker", "https://example.com/striker"],
+            ["Bandit", "https://example.com/bandit"],
+            ["Sissy", "https://example.com/sissy"]
+        ];
+
+        let contentDiv = document.getElementById("content");
+
+        for (let x in names) {
+            let name = names[x][0];
+            let url = names[x][0];
+
+            contentDiv.innerHTML += `<a href="${url}" target="_blank">Animal: ${name}</a><br>`;
+        }
+    </script>
+
+</body>
+</html>
