@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Survey</title>
+    <style type="text/css">
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        button {
+            background: lightgrey;
+            border-radius: 5px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="seasonForm" action="" method="get">
+        <div>
+            <label for="season">What is your favorite season?</label><br>
+            <input type="text" id="season" name="season">
+        </div>
+        <br> 
+        <div class="seasonField">
+            <label for="why">Please explain why:</label><br>
+            <textarea name="why" id="why">Explain here...</textarea>
+        </div>
+        <br>
+        <div class="seasonField">
+            <label>What season is it currently:</label><br>
+            <input type="radio" id="winter" name="seasonType" value="winter">
+            <label for="winter">Winter</label><br>
+            <input type="radio" id="spring" name="seasonType" value="spring">
+            <label for="spring">Spring</label><br>
+            <input type="radio" id="summer" name="seasonType" value="summer">
+            <label for="summer">Summer</label><br>
+            <input type="radio" id="fall" name="seasonType" value="fall">
+            <label for="fall">Fall</label><br>
+        </div>
+        <br>
+        <div class="seasonField">
+            <label for="weatherType">How would you describe the weather?</label><br>
+            <select name="weatherType" id="weatherType">
+                <option value="sunny">Sunny</option>
+                <option value="partial">Partly Cloudy</option>
+                <option value="cloudy">Cloudy</option>
+                <option value="rain">Rainy</option>
+                <option value="snow">Snowy</option>
+                <option value="storm">Stormy</option>
+                <option value="fog">Foggy</option>
+                <option value="green">Green Rain</option>
+                <option value="ohno">Catastrophic Event</option>
+            </select>
+        </div>
+        <br>
+        <div class="seasonField">
+            <label for="temperature">What is the current temperature (in degrees Fahrenheit)?</label><br>
+            <input type="number" id="temperature" name="temperature">
+        </div>
+        <br>
+        <div class="seasonField">
+            What can you do outside with the weather?<br>
+            <input type="checkbox" id="activity1" name="activities" value="Hike">
+            <label for="activity1">Hike</label><br>
+            <input type="checkbox" id="activity2" name="activities" value="Swim">
+            <label for="activity2">Swim</label><br>
+            <input type="checkbox" id="activity3" name="activities" value="Jog">
+            <label for="activity3">Jog</label><br>
+            <input type="checkbox" id="activity4" name="activities" value="Birdwatch">
+            <label for="activity4">Birdwatch</label><br>
+            <input type="checkbox" id="activity5" name="activities" value="Build a snowman">
+            <label for="activity5">Build a snowman</label><br>
+            <input type="checkbox" id="activity6" name="activities" value="Stay inside (green rain hazard)">
+            <label for="activity6">Stay inside; green rain is turning people to goo</label><br>
+            <input type="checkbox" id="activity7" name="activities" value="Collect moss">
+            <label for="activity7">Collect moss</label><br>
+            <input type="checkbox" id="activity8" name="activities" value="Call the National Weather Service">
+            <label for="activity8">Call the National Weather Service</label><br>
+        </div>
+        <br>
+        <div class="seasonField">
+            <label for="todayDate">What is today's date?</label><br>
+            <input type="date" id="todayDate" name="todayDate">
+        </div>
+        <br>
+        <button type="submit" value="submit" id="submitButton">Submit</button>
+    </form>
+
+    <div id="formResults"></div>
+
+    <script>
+        const queryString = window.location.search;
+
+        if (queryString !== "") {
+            const urlParams = new URLSearchParams(queryString);
+            
+            // Extracting form values
+            const season = urlParams.get('season') || "Not provided";
+            const why = urlParams.get('why') || "Not provided";
+            const seasonType = urlParams.get('seasonType') || "Not provided";
+            const weatherType = urlParams.get('weatherType') || "Not provided";
+            const temperature = urlParams.get('temperature') || "Not provided";
+            const todayDate = urlParams.get('todayDate') || "Not provided";
+
+            // Handling multiple checkbox values
+            const activities = urlParams.getAll('activities').join(", ") || "None selected";
+
+            // Display results
+            document.getElementById("formResults").innerHTML = `
+                <p><strong>Form Results:</strong></p>
+                <p>Favorite Season: ${season}</p>
+                <p>Why: ${why}</p>
+                <p>Current Season: ${seasonType}</p>
+                <p>Current Weather: ${weatherType}</p>
+                <p>Current Temperature: ${temperature}</p>
+                <p>Outdoor Activities: ${activities}</p>
+                <p>Today's Date: ${todayDate}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
