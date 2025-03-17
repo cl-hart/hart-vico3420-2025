@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Grocery List</h1>
+    <div id="grocery">
+
+        <script>
+
+            let items = [
+                "Milk",
+                "Bread",
+                "Eggs",
+                "Broth",
+                "Marinara",
+                "Alfredo"
+            ];
+
+            items.shift();
+
+            items.push("Coffee Creamer");
+
+            items.sort();
+
+            items.splice(2, 1);
+
+            document.getElementById("grocery").innerHTML = "My Groceries:<br><br>";
+
+            for (let i = 0; i < items.length; i++) {
+                document.getElementById("grocery").innerHTML += items[i] + "<br>";
+            }
+
+        </script>
+    </div>
+
+</body>
+</html>
