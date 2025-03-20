@@ -17,8 +17,17 @@
                 "Eggs",
                 "Broth",
                 "Marinara",
-                "Alfredo"
+                "Alfredo",
+                "Granola",
+                "Cereal"
             ];
+
+            let values = [ 5, 5, 0, 10, -5 ];
+
+            let userNum = 2;
+
+            alert(values[userNum]);
+
 
             items.shift();
 
@@ -37,5 +46,25 @@
         </script>
     </div>
 
+    <h2>Home Goods</h2>
+    <div id="home">
+
+        <script>
+
+            let homes = [
+                "Quilt",
+                "Sheets",
+            ];
+
+            homes.splice(0, 1);
+
+            document.getElementById("home").innerHTML = "Extra Stuff:<br><br>";
+
+            for (let i = 0; i < homes.length; i++) {
+                document.getElementById("home").innerHTML += homes[i] + "<br>";
+            }
+
+        </script>
+    </div>
 </body>
 </html>
